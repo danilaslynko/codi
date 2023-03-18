@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #app {
+    height: 100%;
+}
+
+.global-messages {
+    @apply overflow-hidden top-6 left-1/4 w-1/2 fixed flex flex-col justify-center items-center;
+}
+
+.global-messages .message {
+    @apply rounded-md font-bold opacity-80 py-3 pl-4 w-full text-left my-2;
+}
+
+.global-messages .error {
+    @apply text-red-700 bg-red-200;
+}
+
+.global-messages .warning {
+    @apply text-yellow-700 bg-yellow-200;
+}
+
+.global-messages .info {
+    @apply text-green-700 bg-green-200;
+}
+
+.header-menu {
+    @apply relative px-4 py-4 flex justify-between items-center bg-white border-solid border-b-2 border-blue-700;
+    height: 4%;
+}
+
+.header-menu ul {
+    @apply hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6
+}
+
+.main-view {
+    @apply px-3 py-3 bg-gray-100 h-full overflow-hidden border-t flex items-center flex-col h-full p-2;
+    height: 92%;
+}
+
+.footer {
+    @apply border-t-2 border-blue-700 flex bg-white px-3 py-3 justify-center
+}
+
+.tile {
+    @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
+}
