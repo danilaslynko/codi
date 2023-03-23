@@ -13,23 +13,9 @@ import ru.mtuci.codi.entity.user.UserService;
 public class UserController {
     private final UserService service;
 
-    @PutMapping("/create")
-    public User create(User item) {
-        return service.create(item);
-    }
-
     @GetMapping("/getById")
     public User getById(Integer id) {
         return service.getById(id);
     }
 
-    @PutMapping("/change")
-    public User change(User item) {
-        return service.change(item);
-    }
-
-    @DeleteMapping("/deleteById")
-    public void deleteById(Integer id) {
-        service.deleteById(id);
-    }
 }

@@ -1,6 +1,7 @@
 package ru.mtuci.codi.entity.project;
 
-import ru.mtuci.codi.common.BaseRepo;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ProjectRepo extends BaseRepo<Project> {
+
+public interface ProjectRepo extends JpaRepository<Project, Integer> {
 }

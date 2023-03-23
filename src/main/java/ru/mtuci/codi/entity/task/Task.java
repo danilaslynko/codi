@@ -1,24 +1,20 @@
 package ru.mtuci.codi.entity.task;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.*;
-import lombok.experimental.SuperBuilder;
-import ru.mtuci.codi.common.BaseData;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
-@SuperBuilder
+@Accessors(fluent = true, chain = true)
 @Entity
-@NoArgsConstructor
 @Table(name = "task")
-public class Task extends BaseData {
+public class Task {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Enumerated(EnumType.STRING)
+    private TaskStatus status;
 }

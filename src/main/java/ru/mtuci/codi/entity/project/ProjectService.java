@@ -1,15 +1,21 @@
 package ru.mtuci.codi.entity.project;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.mtuci.codi.common.BaseService;
 
 @Service
-public class ProjectService extends BaseService<Project> {
+@RequiredArgsConstructor
+public class ProjectService {
 
     private final ProjectRepo repo;
 
-    public ProjectService(ProjectRepo repo) {
-        super(repo);
-        this.repo = repo;
+    public Project create(Project project) {
+        return repo.save(project);
     }
+
+    public Project getById(Integer id) {
+        return repo.getById(id);
+    }
+
+
 }
