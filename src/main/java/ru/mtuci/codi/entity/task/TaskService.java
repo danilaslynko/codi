@@ -1,14 +1,21 @@
 package ru.mtuci.codi.entity.task;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.mtuci.codi.common.BaseService;
 
 @Service
-public class TaskService extends BaseService<Task> {
+@RequiredArgsConstructor
+public class TaskService {
+
     private final TaskRepo repo;
 
-    public TaskService(TaskRepo repo) {
-        super(repo);
-        this.repo = repo;
+    public Task create(Task task) {
+        return repo.save(task);
     }
+
+    public Task getById(Integer id) {
+        return repo.getById(id);
+    }
+
+
 }

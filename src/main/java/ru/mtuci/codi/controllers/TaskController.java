@@ -24,13 +24,4 @@ public class TaskController {
         return service.getById(id);
     }
 
-    @PutMapping("/change")
-    public Task change(Task item) {
-        return service.change(item);
-    }
-
-    @DeleteMapping("/deleteById")
-    public void deleteById(Integer id) {
-        service.deleteById(id);
-    }
 }

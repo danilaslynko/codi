@@ -1,25 +1,37 @@
 package ru.mtuci.codi.entity.user;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
-import ru.mtuci.codi.common.BaseData;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+import ru.mtuci.codi.entity.role.Role;
+
+import javax.persistence.*;
+import java.util.Date;
 
 @Data
-@SuperBuilder
 @Entity
-@NoArgsConstructor
-@Table(name = "user")
-public class User extends BaseData {
+@Table(name = "users")
+public class User {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "login")
+    private String login;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @ManyToOne
+    @JoinColumn(name="role_id", referencedColumnName = "id")
+    private Role role;
+
+    @Column(name = "create_date")
+    private Date createDate;
 }

@@ -23,14 +23,4 @@ public class ProjectController {
     public Project getById(Integer id) {
         return service.getById(id);
     }
-
-    @PutMapping("/change")
-    public Project change(Project item) {
-        return service.change(item);
-    }
-
-    @DeleteMapping("/deleteById")
-    public void deleteById(Integer id) {
-        service.deleteById(id);
-    }
 }

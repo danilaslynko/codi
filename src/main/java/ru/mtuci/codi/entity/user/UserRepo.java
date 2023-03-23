@@ -1,6 +1,7 @@
 package ru.mtuci.codi.entity.user;
 
-import ru.mtuci.codi.common.BaseRepo;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepo extends BaseRepo<User> {
+public interface UserRepo extends JpaRepository<User, Integer> {
+    User findByLogin(String login);
 }
